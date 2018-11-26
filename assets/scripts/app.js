@@ -13,7 +13,7 @@ function renderImages(cb){
 	while(i < len){
 		var link = data.dogs[i].image
 		var newElement = document.createElement('div')
-		newElement.innerHTML = `<img class='lozad img-dog ${link}' data-attr='${link}' class='lozad' data-original='${link}' src='${link}'/>`
+		newElement.innerHTML = `<img class='lozad img-dog ${link}' data-attr='${link}' src='${link}'/>`
 		document.getElementById("gallery").appendChild(newElement);
 		i++
 	}
