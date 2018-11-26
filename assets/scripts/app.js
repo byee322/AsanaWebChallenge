@@ -1,31 +1,34 @@
+'use strict;'
+
 function initLazy(){
-	const images = document.querySelectorAll("img.lozad")
-	const observer = window.lozad(images)
+	var images = document.querySelectorAll("img.lozad")
+	var observer = window.lozad(images)
 	observer.observe()
 }
 
 function renderImages(cb){
-	const gallery = document.querySelectorAll("#gallery")
-	for(let i=0; i < data.dogs.length; i++){
-		const link = data.dogs[i].image
-		const newElement = document.createElement('div')
-		newElement.innerHTML = `<img class='img-dog ${link}' data-attr='${link}' class='lozad' data-original='${link}' src='${link}'/>`
+	var gallery = document.querySelectorAll("#gallery")
+	var i = 0;
+	var len = data.dogs.length
+	while(i < len){
+		var link = data.dogs[i].image
+		var newElement = document.createElement('div')
+		newElement.innerHTML = `<img class='lozad img-dog ${link}' data-attr='${link}' class='lozad' data-original='${link}' src='${link}'/>`
 		document.getElementById("gallery").appendChild(newElement);
-
-
+		i++
 	}
 	cb()
 }
 
 function renderModal(src){
 	// Get the modal
-	const modal = document.getElementById('myModal');
+	var modal = document.getElementById('myModal');
 
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
-	const img = document.getElementsByClassName(src);
-	const modalImg = document.getElementById("img01");
-	const captionText = document.getElementById("caption");
-	const span = document.getElementsByClassName("close")[0];
+	var img = document.getElementsByClassName(src);
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+	var span = document.getElementsByClassName("close")[0];
 
 	modal.style.display = "block"
 	modalImg.src = src
